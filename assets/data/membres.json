@@ -1,0 +1,6 @@
+[
+  { "id": 1, "prenom": "Mike",   "nom": "", "role": "Chef de projet",         "bio": "Coordination, Trello, GitHub et diagramme de Gantt.",              "cv_pdf": "assets/cv/mike.pdf" },
+  { "id": 2, "prenom": "Berkan", "nom": "", "role": "Design",                 "bio": "Maquettes Figma, charte graphique et logo du projet.",             "cv_pdf": "assets/cv/berkan.pdf" },
+  { "id": 3, "prenom": "Mathéo", "nom": "", "role": "Analyse fonctionnelle",  "bio": "Cahier des charges et documentation du projet.",                   "cv_pdf": "assets/cv/matheo.pdf" },
+  { "id": 4, "prenom": "Othman", "nom": "", "role": "Modélisation",          "bio": "Cas d'utilisation UML et modèle de données.",                      "cv_pdf": "assets/cv/othman.pdf" }
+]

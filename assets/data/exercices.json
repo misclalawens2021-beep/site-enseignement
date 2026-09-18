@@ -1,0 +1,181 @@
+{
+  "langages": [
+    {
+      "id": 1,
+      "nom": "Algo",
+      "slug": "algo"
+    },
+    {
+      "id": 2,
+      "nom": "C",
+      "slug": "c"
+    },
+    {
+      "id": 3,
+      "nom": "PHP",
+      "slug": "php"
+    },
+    {
+      "id": 4,
+      "nom": "JavaScript",
+      "slug": "javascript"
+    },
+    {
+      "id": 5,
+      "nom": "Java",
+      "slug": "java"
+    }
+  ],
+  "exercices": [
+    {
+      "id": 1,
+      "numero": 1,
+      "langage_id": 1,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Validation d’une date",
+      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
+      "correction": "2/ declaration :\n\nd, m, y : réel\n\nvariable valide : BOOLEEN\nvariable bissextile : BOOLEEN\n\ndébut\n\nafficher \"donner un jour\"\nsaisir d\nafficher \"donner un mois\"\nsaisir m\nafficher \"donner une année\"\nsaisir y\n\nvalider <- vrai\n\nsi m < 1 OU m > 12 alors\n\tvalide <- faux\nsinon SI m = 2 \n        SI bissextile \n            SI d < 29 alors\n                valider <- faux\n        sinon si d < 28 alors\n            valider = false\nsinon si (m = 4 OU m = 6 ou m = 9 ou m = 11)\net d > 30 alors\n\tvalide <- faux\nsinon si d < 1 ou d > 31 alors\n\tvalide <- faux\nfinsi\n\nsi valide alors\n\tsaisir \"date valide\"\nsinon\n\tsaisir \"date invalide\"\nfinsi\n\nretourne 0\n\nfin"
+    },
+    {
+      "id": 2,
+      "numero": 2,
+      "langage_id": 1,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Nombres parfaits",
+      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
+      "correction": "2/ Nombres parfaits:\n\nALGORITHME:\n\nDéclaration :\n\nbMin, bMax : réel (int)\nn, i, smDiv : réel (int)\n\ndebut :\nafficher \"Entrer la borne minimal : \"\nsaisir bMin\nafficher \"Entrer la borne maximal : \"\nsaisir bMax\n\nafficher \"Nombres parfaits entre :\" bMin, \" et \", bMax, \" :\"\n\npour n de bMin A bMax faire\n\tsmDiv <- 0\n\n\tpour i de 1 A (n-1) faire\n\t\tsi n % i = 0 alors\n\t\t\tsmDiv <- smDiv + i\n\t\tfinsi\n\tfinpour\n\n\tsi smDiv = n ET n>0 alors\n\t\tafficher n\n\tfinsi\nfinpour\nfin"
+    },
+    {
+      "id": 3,
+      "numero": 3,
+      "langage_id": 1,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Calcul de la TVA",
+      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
+      "correction": "EXO 2/ TVA\n\nDéclaration :\nht, q, t, p,  : réel\n\nDébut\n\nafficher(\"Donner le prix unitaire :\")\nsaisir(\"ht_uni\")\nafficher(\"Donner la quantité :\")\nsaisir(q)\nafficher(\"Donner le taux de TVA :\")\nsaisir(t_tva)\n\nv_tva <- ht_uni * (t_tva / 100)\np_ttc <- ht_uni + v_tva\n\nafficher(\"Le prix TTC est de : p_ttc\")\nafficher(\"Le montant de la TVA est de : v_tva\")\n\n\nFinTVA"
+    },
+    {
+      "id": 4,
+      "numero": 1,
+      "langage_id": 2,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Validation d’une date",
+      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
+      "correction": "// 2/ TRADUCTION EN C:\n\n#include <stdbool.h>\n#include <stdio.h>\n\nint main() {\n    int d, m, y;\n    bool valider;\n    bool bissextile;\n\n    printf(\"Donner un jour :\");\n    scanf(\"%d\", &d);\n    printf(\"Donner un mois :\");\n    scanf(\"%d\", &m);\n    printf(\"Donner une année :\");\n    scanf(\"%d\", &y);\n\n    valider = true;\n    bissextile = (y % 400 == 0) || (y % 4 == 0 && y % 100 != 0);\n\n    if (m < 1 || m > 12) {\n        valider = false;\n    } else if (d < 1) {\n        valider = false;\n    } else if (m == 2) {\n        if (bissextile) {\n            if (d > 29) {\n                valider = false;\n            }\n        } else if (d > 28) {\n            valider = false;\n        }\n    } else if (m == 4 || m == 6 || m == 9 || m == 11) {\n        if (d > 30) {\n            valider = false;\n        }\n    } else if (d > 31) {\n        valider = false;\n    }\n\n    if (valider) {\n        printf(\"Date valide\");\n    } else {\n        printf(\"Date invalide\");\n    }\n\n    return 0;\n}"
+    },
+    {
+      "id": 5,
+      "numero": 2,
+      "langage_id": 2,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Nombres parfaits",
+      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
+      "correction": "// TRADUCTION EN C :\n\n#include <stdio.h>\n\nint main() {\n\t\n\tint bMin, bMax, n, i, smDiv;\n\t\n\tprintf(\"Entrer la borne minimal :\");\n\tscanf(\"%i\", &bMin);\n\tprintf(\"Entrer la borne maximal :\");\n\tscanf(\"%i\", &bMax);\n\t\n\tprintf(\"Nombres parfaits entre %d et %d :\\n\", bMin, bMax);\n\t\n\tfor(n = bMin; n < bMax; n++){\n\t\tsmDiv = 0;\n\t\n\t\tfor(i = 1; i < n-1; i++) {\n\t\t\tif(n % i == 0){\n\t\t\t\tsmDiv = smDiv + i;\n\t\t\t}\n\t\t}\n\t\tif (smDiv = n && n > 0) {\n\t\t\tprintf(\"%d\\n\", n);\n\t\t}\n\t}\n}"
+    },
+    {
+      "id": 6,
+      "numero": 3,
+      "langage_id": 2,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Calcul de la TVA",
+      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
+      "correction": "// 2/ Traduction en C :\n\n#include <stdio.h>\n\nint main() {\n\n\tfloat ht_uni, q, t_tva, v_tva, p_ttc;\n\n\tprintf(\"Donner le prix unitaire :\");\n\tscanf(\"%f\", &ht_uni);\n\tprintf(\"Donner la quantité :\");\n\tscanf(\"%f\", &q);\n\tprintf(\"Donner le taux de la TVA :\");\n\tscanf(\"%f\", &t_tva);\n\n\tp_ttc = ht_uni + v_tva;\n\tv_tva = ht_uni * (t_tva / 100);\n\n\tprintf(\"\\nLe prix TTC est de : %f\", p_ttc);\n\tprintf(\"\\nLe montant TVA est de : %f\", v_tva);\n}"
+    },
+    {
+      "id": 7,
+      "numero": 1,
+      "langage_id": 3,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Validation d’une date",
+      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
+      "correction": "<!-- TRADUCTION EN PHP: -->\n<?php\n\nif(isset($_POST[\"SOUMETTRE\"])) {\n    $d = (int)$_POST[\"d\"];\n    $m = (int) $_POST[\"m\"];\n    $y = (int) $_POST[\"y\"];\n\n    $valid = true;\n    $bis = true;\n\n    if ($m < 1 || $m > 12) {\n        $valid = false;\n    } elseif($m == 2) {\n        if ($bis){\n            if($d < 29){\n                $valid = false;\n            }\n        } elseif (d<28) {\n            $valid = false;\n        }\n    } elseif (($m == 4 || $m == 6 || $m == 9 || $m == 11) && $d > 30) {\n        $valid = false;\n    } elseif($d < 1 || $d > 31) {\n        $valid = false;\n    }\n\n    $message = $valid ? \"Date valide\" : \"Date invalide\";\n \n    session_start();\n    $_SESSION[\"resultat\"] = $message;\n    header(\"Location: date.php\");\n    exit;\n\n    if ($valid) {\n        printf(\"Date valide\");\n    } else {\n        printf(\"Date invalide\");\n    }\n\n    return 0;\n}\n\nsession_start();\nif (isset($_SESSION[\"resultat\"])) {\n    echo $_SESSION[\"resultat\"];\n    unset($_SESSION[\"resultat\"]);\n}"
+    },
+    {
+      "id": 8,
+      "numero": 2,
+      "langage_id": 3,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Nombres parfaits",
+      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
+      "correction": "TRADUCTION EN PHP :\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Nombres parfaits</title>\n</head>\n<body>\n    <center>\n        <h1>Nombres parfaits :</h1>\n        <form method=\"POST\">\n            <p>Entrer une borne minimal : <br></p>\n            <input type=\"text\" name=\"bMin\"><br>\n            <p>Entrer une borne maximal : <br></p>\n            <input type=\"text\" name=\"bMax\"><br>\n\n            <input type=\"submit\" name=\"Resultat\" value=\"Resultat\">\n        </form>\n    </center>\n</body>\n</html>\n\n<?php\n\nif (isset($_POST[\"Resultat\"])) {\n \n    $bMin = $_POST[\"bMin\"];\n    $bMax = $_POST[\"bMax\"];\n\n    echo \"Nombres parfaits entre $bMin et $bMax :<br>\";\n\n    for ($n = $bMin; $n < $bMax; $n++) {\n        $smDiv = 0;\n \n\n        for ($i = 1; $i < $n-1; $i++){\n            if ($n % $i == 0) {\n                $smDiv = $smDiv + $i;\n            }\n        }\n\n        if ($smDiv == $n && $n > 0) {\n            printf($n);\n        }\n    }\n}"
+    },
+    {
+      "id": 9,
+      "numero": 3,
+      "langage_id": 3,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Calcul de la TVA",
+      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
+      "correction": "<!-- TRADUCTION EN PHP : -->\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>TVA</title>\n</head>\n<body>\n    <center>\n        <h1>Calcul TVA :</h1>\n        <form method=\"post\">\n            Donner un prix unitaire : <br>\n            <input type=\"text\" name=\"ht\\_uni\"><br>\n            Donner la quantité : <br>\n            <input type=\"text\" name=\"q\"><br>\n            Donner taux de TVA : <br>\n            <input type=\"text\" name=\"t\\_tva\"><br>\n\n            <input type=\"submit\" name=\"Resultat\" value=\"Resultat\">\n        </form>\n    </center>\n</body>\n</html>\n<?php\n\nif (isset($_POST[\"Resultat\"])){\n    $ht_uni = $_POST[\"ht_uni\"];\n    $q = $_POST[\"q\"];\n    $t_tva = $_POST[\"t_tva\"];\n}\n\n$v_tva = $ht_uni * ($t_tva / 100);\n$p_ttc = $ht_uni + $v_tva;\n\n\nprintf(\"\\n<center><br>Le prix TTC est de : %f<br><br>\", $p_ttc);\nprintf(\"\\nLe montant TVA est de : %f</center>\", $v_tva);\n?>"
+    },
+    {
+      "id": 10,
+      "numero": 1,
+      "langage_id": 4,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Validation d’une date",
+      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
+      "correction": "// TRADUCTION EN JS:\n\nlet d = parseInt(prompt(\"Donner un jour :\"));\nlet m = parseInt(prompt(\"Donner un mois :\"));\nlet y = parseInt(prompt(\"Donner une année :\"));\n\nlet valid = true;\nlet bis = true;\n \nif(m < 1 || m > 12) {\n    valid = false;\n} else if(m == 2) {\n    if(bis){\n        if(d<29){\n            valid = false;\n        }\n    } else if(d<28){\n        valid = false;\n    } \n} else if ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30) {\n    valid = false;\n} else if(d < 1 || d > 31) {\n    valid = false;\n}\n\nif (valid) {\n    alert(\"Date valide\");\n} else {\n    alert(\"Date invalide\");\n}"
+    },
+    {
+      "id": 11,
+      "numero": 2,
+      "langage_id": 4,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Nombres parfaits",
+      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
+      "correction": "let bMin = parseInt(prompt(\"Donne la borne minimal :\"));\nlet bMax = parseInt(prompt(\"Donne la borne maximal :\"));\n\nalert(\"Nombres parfaits entre \" + bMin + \" et \" + bMax);\n\nfor (let n = bMin; n < bMax; n++) {\n    let smDiv = 0;\n\n    for (let i = 1; i < n-1; i++) {\n        if (n % i == 0) {\n            smDiv = smDiv + i;\n        }\n    }\n\n    if (smDiv == n && n > 0) {\n        console.log(n);\n    }\n\n    alert(\"Les nombres parfaits sont :\" + n + \".\");\n}"
+    },
+    {
+      "id": 12,
+      "numero": 3,
+      "langage_id": 4,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Calcul de la TVA",
+      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
+      "correction": "// TRADUCTION EN JavaScript :\n\nlet ht_uni = parseFloat(prompt(\"Donner le prix unitaire HT: \"));\n        let q = parseInt(prompt(\"Donner la quantité :\"));\n        let t_tva = parseFloat(prompt(\"Donner le taux TVA :\"));\n \n        let v_tva = ht_uni * (t_tva / 100);\n        let p_ttc = ht_uni + v_tva;\n \n\n        alert(\"Le prix TTC est de : \" + p_ttc + \" le montant TVA est de : \" + v_tva);"
+    },
+    {
+      "id": 13,
+      "numero": 1,
+      "langage_id": 5,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Validation d’une date",
+      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
+      "correction": "import java.util.Scanner;\n\npublic class date {\n    public static void main (String args[]){\n        Scanner sc = new Scanner(System.in);\n        int d, m, y;\n\n\n        System.out.println(\"Donner un jour :\");\n        d = sc.nextInt();\n        System.out.println(\"Donner un mois :\");\n        m = sc.nextInt();\n        System.out.println(\"Donner une année :\");\n        y = sc.nextInt();\n\n        boolean valid = true;\n        boolean bis = true;\n\n        if (m < 1 || m > 12) {\n            valid = false;\n        } else if (m == 2 &&) {\n            if(bis) {\n                if (d<29) {\n                    valid = false;\n                }\n            } else if (d<28){\n                valid = false;\n            }\n        } else if ((m == 4 || m == 6 || m == 9 || m == 11) && d < 30) {\n            valid = false;\n        } else if (d<1 || d>31){\n            valid = false;\n        }\n\n        if (valid) {\n            System.out.println(\"Date valide\");\n        } else {\n            System.out.println(\"Date invalide\");\n        }\n    }\n}"
+    },
+    {
+      "id": 14,
+      "numero": 2,
+      "langage_id": 5,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Nombres parfaits",
+      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
+      "correction": "import java.util.Scanner;\npublic class nb_p {\n    public static void main (String args[]){\n        Scanner sc = new Scanner(System.in);\n        int bMin, bMax, n, i, smDiv;\n\n        System.out.println(\"Donner une borne minimal :\");\n        bMin = sc.nextInt();\n        System.out.println(\"Donner une borne maximal :\");\n        bMax = sc.nextInt();\n\n        for (n = bMin; n < bMax; n++) {\n            smDiv = 0;\n\n            for(i = 1; i < n - 1;n++) {\n                if (n % i == 0) {\n                    smDiv = smDiv + i;\n                }\n            }\n\n            if (smDiv == n && n > 0) {\n                System.out.println(n);\n            }\n\n            System.out.println(\"Les nombres parfaits sont \" + n);\n        }\n    }\n}"
+    },
+    {
+      "id": 15,
+      "numero": 3,
+      "langage_id": 5,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-15",
+      "titre": "Calcul de la TVA",
+      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
+      "correction": "import java.util.Scanner;\n\npublic class tva {\n    public static void main(String args[]) {\n        Scanner sc = new Scanner(System.in);\n        int ht_uni, q, t_tva, v_tva, p_ttc;\n\n        System.out.println(\"Donner le prix unitaire: \");\n        ht_uni = sc.nextInt();\n        System.out.println(\"Donner la quantité: \");\n        q = sc.nextInt();\n        System.out.println(\"Donner le taux de la TVA: \");\n        t_tva = sc.nextInt();\n\n        v_tva = ht_uni + t_tva/100;\n        p_ttc = ht_uni + v_tva;\n\n        System.out.println(\"Le prix unitaire TTC est de: \" + p_ttc);\n        System.out.println(\"Le montant de la TVA est de \" + v_tva);\n    }\n}"
+    }
+  ]
+}

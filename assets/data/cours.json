@@ -1,0 +1,118 @@
+[
+  {
+    "id": 1,
+    "titre": "Algorithmique",
+    "chapitres": [
+      {
+        "id": 1,
+        "numero": 1,
+        "titre": "Variables",
+        "etat": "Termine",
+        "contenu": "Déclaration et typage des variables, affectation, conventions de nommage en pseudocode. Mis en pratique avec le calcul de la TVA à partir d'un prix, d'une quantité et d'un taux.",
+        "exemple_code": "Variables ht_uni, t_tva, v_tva, p_ttc : réel\nDebut\n  v_tva <- ht_uni * (t_tva / 100)\n  p_ttc <- ht_uni + v_tva\nFin",
+        "bilan": "Chapitre validé par les 4 membres du groupe.",
+        "examens": [
+          {
+            "id": 1,
+            "numero": 1,
+            "titre": "QCM variables",
+            "type": "QCM",
+            "nb_questions": 10,
+            "dernier_resultat": "18/20",
+            "lien": null
+          },
+          {
+            "id": 2,
+            "numero": 2,
+            "titre": "Exercice écrit — Calcul de la TVA",
+            "type": "Écrit",
+            "nb_questions": 1,
+            "dernier_resultat": "17/20",
+            "lien": "exercices.html?exercice=3"
+          }
+        ],
+        "exercices_lies": [
+          {
+            "exercice_id": 3,
+            "label": "Calcul de la TVA"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "numero": 2,
+        "titre": "Conditions",
+        "etat": "Termine",
+        "contenu": "Structures Si / Sinon / SinonSi, opérateurs de comparaison et logiques, imbrication de conditions. Mis en pratique avec la validation d'une date (jour, mois, année, mois de 30/31 jours, années bissextiles).",
+        "exemple_code": "Si m < 1 OU m > 12 Alors\n  valide <- faux\nSinon Si m = 2 Alors\n  Si bissextile Alors\n    Si d > 29 Alors\n      valide <- faux\n    FinSi\n  Sinon\n    Si d > 28 Alors\n      valide <- faux\n    FinSi\n  FinSi\nFinSi",
+        "bilan": "Chapitre validé, moyenne du groupe 15/20.",
+        "examens": [
+          {
+            "id": 3,
+            "numero": 1,
+            "titre": "QCM conditions",
+            "type": "QCM",
+            "nb_questions": 12,
+            "dernier_resultat": "15/20",
+            "lien": null
+          },
+          {
+            "id": 4,
+            "numero": 2,
+            "titre": "Exercice écrit — Validation d'une date",
+            "type": "Écrit",
+            "nb_questions": 1,
+            "dernier_resultat": "15/20",
+            "lien": "exercices.html?exercice=1"
+          }
+        ],
+        "exercices_lies": [
+          {
+            "exercice_id": 1,
+            "label": "Validation d'une date"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "numero": 3,
+        "titre": "Les boucles",
+        "etat": "En cours",
+        "contenu": "Boucle for, while, do…while : quand choisir l'une ou l'autre, compteurs et conditions d'arrêt. Mis en pratique avec la recherche des nombres parfaits dans un intervalle (boucles imbriquées).",
+        "exemple_code": "Pour n de bMin à bMax Faire\n  smDiv <- 0\n  Pour i de 1 à (n-1) Faire\n    Si n % i = 0 Alors\n      smDiv <- smDiv + i\n    FinSi\n  FinPour\n  Si smDiv = n ET n > 0 Alors\n    Ecrire(n)\n  FinSi\nFinPour",
+        "bilan": "Une boucle for quand le nombre de tours est connu, while sinon. Attention aux boucles imbriquées : bien vérifier les bornes pour éviter les erreurs de décalage.",
+        "examens": [
+          {
+            "id": 5,
+            "numero": 1,
+            "titre": "QCM",
+            "type": "QCM",
+            "nb_questions": 10,
+            "dernier_resultat": "16/20",
+            "lien": null
+          },
+          {
+            "id": 6,
+            "numero": 2,
+            "titre": "Exercice écrit — Nombres parfaits",
+            "type": "Écrit",
+            "nb_questions": 1,
+            "dernier_resultat": null,
+            "lien": "exercices.html?exercice=2"
+          }
+        ],
+        "exercices_lies": [
+          {
+            "exercice_id": 2,
+            "label": "Nombres parfaits"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "titre": "Développement web",
+    "chapitres": []
+  }
+]

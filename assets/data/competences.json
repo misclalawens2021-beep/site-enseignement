@@ -1,0 +1,22 @@
+{
+  "categories": [
+    { "id": 1, "nom": "Langages" },
+    { "id": 2, "nom": "Base de données" },
+    { "id": 3, "nom": "Web" },
+    { "id": 4, "nom": "Outils" }
+  ],
+  "competences": [
+    { "id": 1,  "nom": "PHP",                    "categorie_id": 1, "membre_id": 4, "prenom": "Othman", "niveau": 3 },
+    { "id": 2,  "nom": "Java",                   "categorie_id": 1, "membre_id": 1, "prenom": "Mike",   "niveau": 2 },
+    { "id": 3,  "nom": "C",                      "categorie_id": 1, "membre_id": 3, "prenom": "Mathéo", "niveau": 1 },
+    { "id": 4,  "nom": "MySQL",                  "categorie_id": 2, "membre_id": 4, "prenom": "Othman", "niveau": 3 },
+    { "id": 5,  "nom": "Modélisation MCD",       "categorie_id": 2, "membre_id": 4, "prenom": "Othman", "niveau": 2 },
+    { "id": 6,  "nom": "Requêtes préparées",     "categorie_id": 2, "membre_id": 4, "prenom": "Othman", "niveau": 3 },
+    { "id": 7,  "nom": "HTML/CSS",               "categorie_id": 3, "membre_id": 2, "prenom": "Berkan", "niveau": 3 },
+    { "id": 8,  "nom": "JavaScript",             "categorie_id": 3, "membre_id": 2, "prenom": "Berkan", "niveau": 2 },
+    { "id": 9,  "nom": "Responsive",             "categorie_id": 3, "membre_id": 2, "prenom": "Berkan", "niveau": 2 },
+    { "id": 10, "nom": "Git/GitHub",             "categorie_id": 4, "membre_id": 1, "prenom": "Mike",   "niveau": 3 },
+    { "id": 11, "nom": "Figma",                  "categorie_id": 4, "membre_id": 2, "prenom": "Berkan", "niveau": 2 },
+    { "id": 12, "nom": "Trello",                 "categorie_id": 4, "membre_id": 1, "prenom": "Mike",   "niveau": 3 }
+  ]
+}

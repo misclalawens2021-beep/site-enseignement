@@ -1,0 +1,6 @@
+[
+  { "id": 1, "membre_id": 1, "prenom": "Mike",   "nom": "Entreprise A", "secteur": "ESN",              "ville": "Nanterre",           "periode": "2024 \u2192 2026", "contrat": "Alternance", "missions": "D\u00e9veloppement d'applications internes en PHP / Symfony.", "site_web": "" },
+  { "id": 2, "membre_id": 2, "prenom": "Berkan", "nom": "Entreprise B", "secteur": "\u00c9diteur logiciel", "ville": "Paris",              "periode": "8 semaines",  "contrat": "Stage",      "missions": "Reprise d'un module de facturation et tests.",                 "site_web": "" },
+  { "id": 3, "membre_id": 3, "prenom": "Math\u00e9o", "nom": "Entreprise C", "secteur": "ESN",           "ville": "Levallois-Perret",   "periode": "2024 \u2192 2026", "contrat": "Alternance", "missions": "Analyse fonctionnelle et r\u00e9daction de documentation technique.", "site_web": "" },
+  { "id": 4, "membre_id": 4, "prenom": "Othman", "nom": "Entreprise D", "secteur": "Cabinet conseil",  "ville": "Paris",              "periode": "2024 \u2192 2026", "contrat": "Alternance", "missions": "Mod\u00e9lisation de bases de donn\u00e9es et diagrammes UML.",  "site_web": "" }
+]

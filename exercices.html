@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercices — __SITE_NOM__</title>
+<meta name="description" content="Les cours, les examens et les exercices de la promo BTS SIO SLAM, au meme endroit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="entete">
+  <div class="conteneur entete__barre">
+    <a class="logo" href="index.html">
+      <!-- <span class="logo__marque">E<span class="logo__slash">/</span></span> -->
+      <img src="assets/img/logo_ynov_campus_rvb.png" style="width: 80px;">
+      <span class="logo__texte">
+        <strong data-site="nom"></strong>
+        <small>BTS SIO · SLAM 2 · Ynov</small>
+      </span>
+    </a>
+
+    <button class="burger" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="navigation" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="groupe.html">Le groupe</a></li>
+        <li><a href="cours.html">Cours</a></li>
+        <li><a href="exercices.html" class="actif" aria-current="page">Exercices</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+<section class="section">
+  <div class="conteneur">
+    <p class="surtitre">F-50 / F-51</p>
+    <h1>Exercices</h1>
+    <p class="intro">Les exercices faits en cours, classés par langage, avec leur correction.</p>
+
+    <nav class="onglets" id="onglets-langages" aria-label="Filtrer par langage">
+      <!-- rempli en JS -->
+    </nav>
+  </div>
+</section>
+
+<section class="section--serre" id="zone-exercice-detail">
+  <!-- rempli en JS si un exercice est selectionne -->
+</section>
+
+<section class="section--serre">
+  <div class="conteneur grille grille--3" id="liste-exercices">
+    <!-- rempli en JS -->
+  </div>
+</section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur pied__grille">
+    <div>
+      <!-- <span class="logo__marque logo__marque--clair">E<span class="logo__slash">/</span></span> -->
+       <img src="/assets/img/171be2a682f9-logo_ynov_campus_paris_white.png" style="width: 80px;" alt="">
+      <p class="pied__nom" data-site="nom"></p>
+      <p class="pied__adresse" data-site="adresse"></p>
+      <p><a href="#" data-site="mail"></a></p>
+    </div>
+    <div>
+      <p class="pied__titre">Réseaux</p>
+      <ul class="reseaux">
+        <li><a href="#" data-site="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="assets/img/linkedin-svgrepo-com.svg" style="width: 80px;">
+        </a></li>
+        <li><a href="#" data-site="github" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <img src="assets/img/github-142-svgrepo-com.svg" style="width: 80px;">
+        </a></li>
+        <li><a href="#" data-site="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="assets/img/instagram-svgrepo-com.svg" style="width: 80px;">
+        </a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="pied__titre">Le site</p>
+      <ul class="pied__liens">
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="groupe.html">Le groupe</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mentions.html">Mentions légales</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied__bas">
+    <p>Projet de groupe BTS SIO SLAM 2 — Ynov — <span id="annee"></span></p>
+  </div>
+</footer>
+
+<script src="assets/js/commun.js"></script>
+<script src="assets/js/exercices.js"></script>
+</body>
+</html>
