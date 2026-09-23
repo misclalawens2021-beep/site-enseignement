@@ -1,5 +1,5 @@
 [
-  { "id": 1, "nom": "Cahier des charges v3.0",                "meta": "5 pages",              "format": "PDF", "fichier": "assets/documents/cahier-des-charges-v3.pdf" },
-  { "id": 2, "nom": "Diagramme de cas d'utilisation",         "meta": "UML",                  "format": "PDF", "fichier": "assets/documents/diagramme-cas-utilisation.pdf" },
-  { "id": 3, "nom": "Modèle de données",                      "meta": "MCD / MLD",            "format": "PDF", "fichier": "assets/documents/modele-de-donnees.pdf" }
+  { "id": 1, "nom": "Cahier des charges v3.0","meta": "5 pages","format": "PDF", "fichier": "assets/docs/cahier-des-charges-e-enseignement.pdf" },
+  { "id": 2, "nom": "Charte graphique du site","meta": "Modèle du site et choix des couleurs","format": "PDF", "fichier": "assets/docs/Charte_graphique_BTS_SIO_SLAM.pdf" },
+  { "id": 3, "nom": "Diagramme de cas d'utilisation","meta": "MCD / MLD","format": "PNG", "fichier": "assets/docs/Capture_d__C3_A9cran_2026-09-14_101926.png" }
 ]

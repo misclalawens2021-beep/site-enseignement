@@ -245,6 +245,17 @@ pre {
 .tableau th { background: var(--papier); font-weight: 600; font-size: 14px; color: var(--gris); }
 .tableau tr:last-child td { border-bottom: 0; }
 
+.actions-doc { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.ligne-apercu td { background: var(--papier); padding: 20px 18px; }
+.apercu-pdf iframe {
+  width: 100%;
+  height: 75vh;
+  border: 1px solid var(--trait);
+  border-radius: var(--r-carte);
+  background: var(--blanc);
+  display: block;
+}
+
 /* ------------------------------------------------------------ Pied de page */
 
 .pied { background: var(--encre); color: #C9CDD4; margin-top: 64px; padding: 48px 0 24px; }
