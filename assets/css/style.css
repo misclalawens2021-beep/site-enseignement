@@ -133,9 +133,11 @@ img { max-width: 100%; display: block; }
 
 /* CORRECTION 2 : Grilles adaptatives pour éviter le débordement horizontal */
 .grille { display: grid; gap: var(--gouttiere); }
+.grille > * { min-width: 0; }
 .grille--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
 .grille--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 .grille--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.grille--cours { grid-template-columns: 320px 1fr; }
 
 .alerte {
   background: var(--ambre-clair); border: 1px solid var(--ambre);
@@ -268,7 +270,8 @@ pre {
   h2 { font-size: 27px; }
   .hero__grille { grid-template-columns: 1fr; }
   .pied__grille { grid-template-columns: 1fr; gap: 28px; }
-  
+  .grille--cours { grid-template-columns: 1fr; }
+
   .burger { display: block; }
   .ecole { display: none; }
   
