@@ -1,8 +1,7 @@
 /* ==========================================================================
-   E-enseignement — feuille de style unique
-   Charte graphique BTS SIO SLAM 2 — Ynov
-   ========================================================================== */
-
+E-enseignement — feuille de style unique
+Charte graphique BTS SIO SLAM 2 — Ynov
+========================================================================== */
 :root {
   --encre:       #0E1116;
   --bleu:        #2F5FD0;
@@ -22,17 +21,16 @@
   --gris:        #5A6472;
   --gris-fonce:  #3A4350;
   --gris-clair:  #8A9099;
-
   --titre: 'Space Grotesk', system-ui, sans-serif;
   --texte: 'IBM Plex Sans', system-ui, sans-serif;
   --mono:  'JetBrains Mono', ui-monospace, monospace;
-
   --r-controle: 8px;
   --r-carte: 14px;
   --gouttiere: 24px;
 }
 
-* { box-sizing: border-box; }
+/* CORRECTION 1 : La syntaxe originale était invalide */
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -42,13 +40,11 @@ body {
   font-size: 17px;
   line-height: 1.55;
 }
-
 h1, h2, h3, h4 { font-family: var(--titre); letter-spacing: -0.01em; margin: 0 0 12px; }
 h1 { font-size: 52px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
 h2 { font-size: 34px; font-weight: 600; }
 h3 { font-size: 26px; font-weight: 600; }
 h4 { font-size: 20px; font-weight: 600; }
-
 p { margin: 0 0 16px; }
 a { color: var(--bleu); text-decoration: none; }
 a:hover { color: var(--bleu-fonce); text-decoration: underline; }
@@ -65,7 +61,6 @@ img { max-width: 100%; display: block; }
 .evitement:focus { left: 12px; top: 12px; }
 
 /* --------------------------------------------------------- En-tete / menu */
-
 .entete {
   background: var(--papier);
   border-bottom: 2px solid var(--encre);
@@ -75,7 +70,6 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; gap: 24px;
   padding: 14px 0; flex-wrap: wrap;
 }
-
 .logo { display: flex; align-items: center; gap: 12px; color: var(--encre); }
 .logo:hover { text-decoration: none; }
 .logo__marque {
@@ -103,12 +97,10 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--trait-fonce); border-radius: 999px;
   padding: 7px 12px; background: var(--blanc); color: var(--gris);
 }
-
 .burger { display: none; background: none; border: 0; cursor: pointer; padding: 8px; margin-left: auto; }
 .burger span { display: block; width: 22px; height: 2px; background: var(--encre); margin: 4px 0; }
 
 /* ------------------------------------------------------------- Composants */
-
 .bouton {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--texte); font-size: 16px; font-weight: 500;
@@ -125,7 +117,6 @@ img { max-width: 100%; display: block; }
   background: var(--blanc); border: 1px solid var(--trait);
   border-radius: var(--r-carte); padding: 28px;
 }
-
 .etiquette {
   display: inline-block; font-family: var(--mono); font-size: 12px;
   padding: 5px 10px; border-radius: 999px;
@@ -140,10 +131,11 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase; color: var(--gris); margin-bottom: 8px;
 }
 
+/* CORRECTION 2 : Grilles adaptatives pour éviter le débordement horizontal */
 .grille { display: grid; gap: var(--gouttiere); }
-.grille--2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-.grille--3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.grille--4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.grille--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+.grille--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.grille--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
 
 .alerte {
   background: var(--ambre-clair); border: 1px solid var(--ambre);
@@ -162,7 +154,6 @@ pre {
 }
 
 /* ----------------------------------------------------------------- Accueil */
-
 .hero { padding: 72px 0 56px; }
 .hero__grille { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
 .hero p.intro { font-size: 20px; color: var(--gris-fonce); max-width: 56ch; }
@@ -172,12 +163,10 @@ pre {
   aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
   color: var(--gris-clair); font-family: var(--mono); font-size: 14px; text-align: center; padding: 20px;
 }
-
 .chiffre { font-family: var(--titre); font-size: 40px; font-weight: 700; line-height: 1; display: block; }
 .chiffre + h4 { margin-top: 10px; }
 
 /* ------------------------------------------------------------- Le groupe */
-
 .membre__portrait {
   aspect-ratio: 1; border-radius: var(--r-controle); background: var(--papier);
   border: 1px dashed var(--trait-fonce);
@@ -209,7 +198,6 @@ pre {
 .jauge span.plein { background: var(--bleu); }
 
 /* ---------------------------------------------------------------- Cours */
-
 .chapitre__liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .chapitre__liste a {
   display: flex; justify-content: space-between; align-items: center; gap: 12px;
@@ -225,7 +213,6 @@ pre {
 .bilan { border-left: 3px solid var(--valide); background: var(--valide-clair); padding: 18px 22px; border-radius: 0 var(--r-controle) var(--r-controle) 0; }
 
 /* ------------------------------------------------------------ Exercices */
-
 .onglets { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
 .onglets a {
   padding: 9px 16px; border-radius: 999px; font-size: 15px; font-weight: 500;
@@ -239,7 +226,6 @@ pre {
 .repli[open] summary { border-bottom: 1px solid var(--trait); margin-bottom: 16px; }
 
 /* ---------------------------------------------------------------- Tableau */
-
 .tableau { width: 100%; border-collapse: collapse; background: var(--blanc); border: 1px solid var(--trait); border-radius: var(--r-carte); overflow: hidden; }
 .tableau th, .tableau td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--trait); font-size: 16px; }
 .tableau th { background: var(--papier); font-weight: 600; font-size: 14px; color: var(--gris); }
@@ -257,7 +243,6 @@ pre {
 }
 
 /* ------------------------------------------------------------ Pied de page */
-
 .pied { background: var(--encre); color: #C9CDD4; margin-top: 64px; padding: 48px 0 24px; }
 .pied a { color: #9FBBF5; }
 .pied a:hover { color: var(--blanc); }
@@ -276,17 +261,43 @@ pre {
 .reseaux a:hover { background: #1A1F27; text-decoration: none; }
 .pied__bas { border-top: 1px solid #2A303A; margin-top: 36px; padding-top: 18px; font-size: 14px; color: var(--gris-clair); }
 
-/* ------------------------------------------------------------- Responsive */
-
+/* ============================================================= Responsive */
+/* Tablette et petits écrans */
 @media (max-width: 900px) {
   h1 { font-size: 36px; }
   h2 { font-size: 27px; }
   .hero__grille { grid-template-columns: 1fr; }
   .pied__grille { grid-template-columns: 1fr; gap: 28px; }
+  
   .burger { display: block; }
   .ecole { display: none; }
+  
   .nav { flex-basis: 100%; margin-left: 0; display: none; }
   .nav.ouvert { display: block; }
   .nav ul { flex-direction: column; gap: 2px; }
   .nav a { padding: 12px 14px; }
+}
+
+/* CORRECTION 3 : Mobile (très petits écrans) */
+@media (max-width: 600px) {
+  .conteneur { width: min(1280px, 100% - 32px); } /* Réduction des marges latérales */
+  .section { padding: 40px 0; }
+  .hero { padding: 48px 0 32px; }
+  
+  h3 { font-size: 22px; }
+  h4 { font-size: 18px; }
+
+  /* Formulaires et filtres en pleine largeur */
+  .filtres { flex-direction: column; align-items: stretch; }
+  .champ input, .champ select, .champ textarea { min-width: 0; width: 100%; }
+  
+  /* Groupes d'actions */
+  .actions-doc { flex-direction: column; align-items: stretch; }
+  .actions-doc .bouton { width: 100%; justify-content: center; }
+  
+  /* Tableaux : scroll horizontal pour éviter la casse */
+  .tableau { display: block; overflow-x: auto; white-space: nowrap; }
+  
+  /* Cartes */
+  .carte { padding: 20px; }
 }
