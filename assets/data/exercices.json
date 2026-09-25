@@ -32,150 +32,300 @@
       "numero": 1,
       "langage_id": 1,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Validation d’une date",
-      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
-      "correction": "2/ declaration :\n\nd, m, y : réel\n\nvariable valide : BOOLEEN\nvariable bissextile : BOOLEEN\n\ndébut\n\nafficher \"donner un jour\"\nsaisir d\nafficher \"donner un mois\"\nsaisir m\nafficher \"donner une année\"\nsaisir y\n\nvalider <- vrai\n\nsi m < 1 OU m > 12 alors\n\tvalide <- faux\nsinon SI m = 2 \n        SI bissextile \n            SI d < 29 alors\n                valider <- faux\n        sinon si d < 28 alors\n            valider = false\nsinon si (m = 4 OU m = 6 ou m = 9 ou m = 11)\net d > 30 alors\n\tvalide <- faux\nsinon si d < 1 ou d > 31 alors\n\tvalide <- faux\nfinsi\n\nsi valide alors\n\tsaisir \"date valide\"\nsinon\n\tsaisir \"date invalide\"\nfinsi\n\nretourne 0\n\nfin"
+      "date_exo": "2026-09-24",
+      "titre": "Diviseurs d'un nombre",
+      "enonce": "Demander un nombre entier à l'utilisateur, puis afficher tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "Algo : diviseurs \nDéclaration \n\tnb, div : entier \nDébut \n\tAfficher (\"Donner un nombre entier :\")\n\tSaisir (nb)\n\tPour div allant de 1 à nb faire \n\t\tSi nb % div = 0 \n\t\t\tAlors Afficher (div , \" est un diviseur.\")\n\t\tFin si\n\tFin pour \nFin diviseurs\t"
     },
     {
       "id": 2,
       "numero": 2,
       "langage_id": 1,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Nombres parfaits",
-      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
-      "correction": "2/ Nombres parfaits:\n\nALGORITHME:\n\nDéclaration :\n\nbMin, bMax : réel (int)\nn, i, smDiv : réel (int)\n\ndebut :\nafficher \"Entrer la borne minimal : \"\nsaisir bMin\nafficher \"Entrer la borne maximal : \"\nsaisir bMax\n\nafficher \"Nombres parfaits entre :\" bMin, \" et \", bMax, \" :\"\n\npour n de bMin A bMax faire\n\tsmDiv <- 0\n\n\tpour i de 1 A (n-1) faire\n\t\tsi n % i = 0 alors\n\t\t\tsmDiv <- smDiv + i\n\t\tfinsi\n\tfinpour\n\n\tsi smDiv = n ET n>0 alors\n\t\tafficher n\n\tfinsi\nfinpour\nfin"
+      "date_exo": "2026-09-24",
+      "titre": "Équation ax + b = 0",
+      "enonce": "Demander deux coefficients réels a et b, puis résoudre l'équation ax + b = 0 : afficher l'ensemble des solutions si a = 0 (R si b = 0, vide sinon), sinon calculer et afficher la solution unique x = -b/a.",
+      "correction": "Algo : equation \nDéclaration \n\ta, b, x : réel\nDébut \n\tAfficher (\"Donner le premier coeff :\")\n\tSaisir (a)\n\tAfficher (\"Donner le deuxieme coeff :\")\n\tSaisir (b)\n\tSi a = 0 \n\t\tAlors Si b = 0 \n\t\t\t\tAlors Afficher (\"Ens. solutions est R\")\n\t\t\t\tSinon Afficher (\"Pas de solution\")\n\t\t\t  Finsi \n\t\tSinon \n\t\t\tx <- (-b/a)\n\t\t\tAfficher(\"la solution est de :\", x)\n\tFinsi \nFin equation "
     },
     {
       "id": 3,
       "numero": 3,
       "langage_id": 1,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Calcul de la TVA",
-      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
-      "correction": "EXO 2/ TVA\n\nDéclaration :\nht, q, t, p,  : réel\n\nDébut\n\nafficher(\"Donner le prix unitaire :\")\nsaisir(\"ht_uni\")\nafficher(\"Donner la quantité :\")\nsaisir(q)\nafficher(\"Donner le taux de TVA :\")\nsaisir(t_tva)\n\nv_tva <- ht_uni * (t_tva / 100)\np_ttc <- ht_uni + v_tva\n\nafficher(\"Le prix TTC est de : p_ttc\")\nafficher(\"Le montant de la TVA est de : v_tva\")\n\n\nFinTVA"
+      "date_exo": "2026-09-24",
+      "titre": "Copier-coller de fichier",
+      "enonce": "Demander le nom d'un fichier source et d'un fichier destination, ouvrir les deux fichiers, puis copier le contenu du fichier source vers le fichier destination caractère par caractère jusqu'à la fin du fichier source.",
+      "correction": "Algo : copier_coller \nDéclaration \n\tfs,fd : fichier \n\tnoms, nomd : chaine\n\tcar : caractère \nDébut \n\tAfficher (\"Donner le nom du fichier source :\")\n\tSaisir (nomS)\n\tAfficher (\"Donner le nom du fichier destination :\")\n\tSaisir (nomD)\n\t\n\tfs <- ouvrir (nomS, \"lecture\")\n\tfd <- ouvrir (nomD, \"ecritrue\")\n\n\ttant que fin_fichier(fs) = faux faire \n\t\tlire (fs, car)\n\t\tecrire (fd, car)\n\tfin tantque \n\tfermer (fs)\n\tfermer (fd)\nFin copier_coller"
     },
     {
       "id": 4,
       "numero": 1,
       "langage_id": 2,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Validation d’une date",
-      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
-      "correction": "// 2/ TRADUCTION EN C:\n\n#include <stdbool.h>\n#include <stdio.h>\n\nint main() {\n    int d, m, y;\n    bool valider;\n    bool bissextile;\n\n    printf(\"Donner un jour :\");\n    scanf(\"%d\", &d);\n    printf(\"Donner un mois :\");\n    scanf(\"%d\", &m);\n    printf(\"Donner une année :\");\n    scanf(\"%d\", &y);\n\n    valider = true;\n    bissextile = (y % 400 == 0) || (y % 4 == 0 && y % 100 != 0);\n\n    if (m < 1 || m > 12) {\n        valider = false;\n    } else if (d < 1) {\n        valider = false;\n    } else if (m == 2) {\n        if (bissextile) {\n            if (d > 29) {\n                valider = false;\n            }\n        } else if (d > 28) {\n            valider = false;\n        }\n    } else if (m == 4 || m == 6 || m == 9 || m == 11) {\n        if (d > 30) {\n            valider = false;\n        }\n    } else if (d > 31) {\n        valider = false;\n    }\n\n    if (valider) {\n        printf(\"Date valide\");\n    } else {\n        printf(\"Date invalide\");\n    }\n\n    return 0;\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Diviseurs d'un nombre",
+      "enonce": "Demander un nombre entier à l'utilisateur, puis afficher tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "#include <stdio.h>\n\nint main(){\n    int nb;\n    printf(\"saisir un nombre entier : \");\n    scanf(\"%d\", &nb);\n\n    for (int i = 1; i <= nb; i++)\n    {\n        if (nb % i == 0) {\n            printf(\"\\n %d est un diviseur.\", i);\n        }\n    }\n    return 0; \n}"
     },
     {
       "id": 5,
       "numero": 2,
       "langage_id": 2,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Nombres parfaits",
-      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
-      "correction": "// TRADUCTION EN C :\n\n#include <stdio.h>\n\nint main() {\n\t\n\tint bMin, bMax, n, i, smDiv;\n\t\n\tprintf(\"Entrer la borne minimal :\");\n\tscanf(\"%i\", &bMin);\n\tprintf(\"Entrer la borne maximal :\");\n\tscanf(\"%i\", &bMax);\n\t\n\tprintf(\"Nombres parfaits entre %d et %d :\\n\", bMin, bMax);\n\t\n\tfor(n = bMin; n < bMax; n++){\n\t\tsmDiv = 0;\n\t\n\t\tfor(i = 1; i < n-1; i++) {\n\t\t\tif(n % i == 0){\n\t\t\t\tsmDiv = smDiv + i;\n\t\t\t}\n\t\t}\n\t\tif (smDiv = n && n > 0) {\n\t\t\tprintf(\"%d\\n\", n);\n\t\t}\n\t}\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Équation ax + b = 0",
+      "enonce": "Demander deux coefficients réels a et b, puis résoudre l'équation ax + b = 0 : afficher l'ensemble des solutions si a = 0 (R si b = 0, vide sinon), sinon calculer et afficher la solution unique x = -b/a.",
+      "correction": "#include <stdio.h>\nint main(){\n   float a, b, x ;\n   printf(\"saisir le premier coeff : \");\n   scanf(\"%f\", &a);\n   printf(\"saisir le deuxième coeff :\");\n   scanf(\"%f\", &b);\n   if (a==0){\n\t    if (b==0){\n\t        printf(\"l'ensemble des solution est R\");\n\t    }\n\t    else{\n\t        printf(\"il n'y a pas de solution\") ;\n\t    }\n   }\n   else{\n    \tx = -b/a ;\n    \tprintf(\"la solution est : %f\", x);\n   }  \n\treturn 0; \n}"
     },
     {
       "id": 6,
       "numero": 3,
       "langage_id": 2,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Calcul de la TVA",
-      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
-      "correction": "// 2/ Traduction en C :\n\n#include <stdio.h>\n\nint main() {\n\n\tfloat ht_uni, q, t_tva, v_tva, p_ttc;\n\n\tprintf(\"Donner le prix unitaire :\");\n\tscanf(\"%f\", &ht_uni);\n\tprintf(\"Donner la quantité :\");\n\tscanf(\"%f\", &q);\n\tprintf(\"Donner le taux de la TVA :\");\n\tscanf(\"%f\", &t_tva);\n\n\tp_ttc = ht_uni + v_tva;\n\tv_tva = ht_uni * (t_tva / 100);\n\n\tprintf(\"\\nLe prix TTC est de : %f\", p_ttc);\n\tprintf(\"\\nLe montant TVA est de : %f\", v_tva);\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Copier-coller de fichier",
+      "enonce": "Demander le nom d'un fichier source et d'un fichier destination, ouvrir les deux fichiers, puis copier le contenu du fichier source vers le fichier destination caractère par caractère jusqu'à la fin du fichier source.",
+      "correction": "#include <stdio.h>\nint main (){\n\tFILE *fs, *fd; \n\tchar noms[30], nomd[30]; \n\tchar car ; \n\tprintf(\"Donner le nom du fichier source :\"); \n\tscanf(\"%s\", &noms); \n\tprintf(\"Donner le nom du fichier destination :\"); \n\tscanf(\"%s\", &nomd);\n\tfs = fopen (noms, \"r\"); \n\tfd = fopen(nomd, \"w\"); \n\twhile ( ! feof(fs)){\n\t\tcar = fgetc (fs); \n\t\tfputc(car, fd);\n\t}\n\tfclose (fs); \n\tfclose (fd);\n\tprintf (\"Operation copier - coller terminee \");\n\treturn 0; \n}"
     },
     {
       "id": 7,
       "numero": 1,
       "langage_id": 3,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Validation d’une date",
-      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
-      "correction": "<!-- TRADUCTION EN PHP: -->\n<?php\n\nif(isset($_POST[\"SOUMETTRE\"])) {\n    $d = (int)$_POST[\"d\"];\n    $m = (int) $_POST[\"m\"];\n    $y = (int) $_POST[\"y\"];\n\n    $valid = true;\n    $bis = true;\n\n    if ($m < 1 || $m > 12) {\n        $valid = false;\n    } elseif($m == 2) {\n        if ($bis){\n            if($d < 29){\n                $valid = false;\n            }\n        } elseif (d<28) {\n            $valid = false;\n        }\n    } elseif (($m == 4 || $m == 6 || $m == 9 || $m == 11) && $d > 30) {\n        $valid = false;\n    } elseif($d < 1 || $d > 31) {\n        $valid = false;\n    }\n\n    $message = $valid ? \"Date valide\" : \"Date invalide\";\n \n    session_start();\n    $_SESSION[\"resultat\"] = $message;\n    header(\"Location: date.php\");\n    exit;\n\n    if ($valid) {\n        printf(\"Date valide\");\n    } else {\n        printf(\"Date invalide\");\n    }\n\n    return 0;\n}\n\nsession_start();\nif (isset($_SESSION[\"resultat\"])) {\n    echo $_SESSION[\"resultat\"];\n    unset($_SESSION[\"resultat\"]);\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Diviseurs d'un nombre",
+      "enonce": "Demander un nombre entier à l'utilisateur, puis afficher tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "<!DOCTYPE html>\n<html>\n<head>\n\t<title>mes diviseurs</title>\n</head>\n<body>\n<center>\n\t\t<h1> Exercice Mes diviseurs </h1>\n\t\t<form method=\"post\">\n\t\t\tEntrer un nombre : <br>\n\t\t\t<input type=\"text\" name=\"nb\"> <br>\n\t\t\t\n\t\t\t<input type=\"submit\" name=\"Afficher\" value=\"Afficher\">\n\t\t</form>\n\n\t\t<?php\n\t\tif (isset($_POST[\"Afficher\"])){\n\t\t\t$nb = $_POST[\"nb\"];\n\t\t\tfor ($div = 1; $div <= $nb ; $div++){\n\t\t\t\tif ($nb % $div == 0){\n\t\t\t\t\tprintf(\"<br> %d est un diviseur de %d\", $div, $nb);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t?>\n\t</center>\n</body>\n</html>"
     },
     {
       "id": 8,
       "numero": 2,
       "langage_id": 3,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Nombres parfaits",
-      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
-      "correction": "TRADUCTION EN PHP :\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Nombres parfaits</title>\n</head>\n<body>\n    <center>\n        <h1>Nombres parfaits :</h1>\n        <form method=\"POST\">\n            <p>Entrer une borne minimal : <br></p>\n            <input type=\"text\" name=\"bMin\"><br>\n            <p>Entrer une borne maximal : <br></p>\n            <input type=\"text\" name=\"bMax\"><br>\n\n            <input type=\"submit\" name=\"Resultat\" value=\"Resultat\">\n        </form>\n    </center>\n</body>\n</html>\n\n<?php\n\nif (isset($_POST[\"Resultat\"])) {\n \n    $bMin = $_POST[\"bMin\"];\n    $bMax = $_POST[\"bMax\"];\n\n    echo \"Nombres parfaits entre $bMin et $bMax :<br>\";\n\n    for ($n = $bMin; $n < $bMax; $n++) {\n        $smDiv = 0;\n \n\n        for ($i = 1; $i < $n-1; $i++){\n            if ($n % $i == 0) {\n                $smDiv = $smDiv + $i;\n            }\n        }\n\n        if ($smDiv == $n && $n > 0) {\n            printf($n);\n        }\n    }\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Équation ax + b = 0",
+      "enonce": "Demander deux coefficients réels a et b, puis résoudre l'équation ax + b = 0 : afficher l'ensemble des solutions si a = 0 (R si b = 0, vide sinon), sinon calculer et afficher la solution unique x = -b/a.",
+      "correction": "<!DOCTYPE html>\n<html>\n<head>\n\t<title>equation</title>\n</head>\n<body>\n\t<center>\n\t\t<h1>Exercice Equation</h1>\n\t\t<form method=\"POST\">\n\t\t\tPremier Coeff :<br>\n\t\t\t<input type=\"text\" name=\"a\"><br>\n\t\t\tDeuxième :<br>\n\t\t\t<input type=\"text\" name=\"b\"><br>\n\t\t\t<input type=\"submit\" name=\"Resoudre\" value=\"Resoudre\">\n\t\t</form>\n\t\t<?php\n\t\t\tif(isset($_POST[\"Resoudre\"])){\n\t\t\t\t$a=$_POST[\"a\"];\n\t\t\t\t$b=$_POST[\"b\"];\n\t\t\t\tif ($a == 0) {\n\t\t\t        if ($b == 0) {\n\t\t\t            printf(\"Ens. des solutions est R\");\n\t\t\t        } else {\n\t\t\t            printf(\"Ens. des solutions est vide\");\n\t\t\t        }\n\t\t\t    } else {\n\t\t        \t$x = -$b / $a;\n\t\t        printf(\"La solution est de : %f\", $x);\n\t\t    }\n\t\t\t\t\n\t\t\t}\n\t\t ?>\n\t</center>\n\n</body>\n</html>"
     },
     {
       "id": 9,
       "numero": 3,
       "langage_id": 3,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Calcul de la TVA",
-      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
-      "correction": "<!-- TRADUCTION EN PHP : -->\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>TVA</title>\n</head>\n<body>\n    <center>\n        <h1>Calcul TVA :</h1>\n        <form method=\"post\">\n            Donner un prix unitaire : <br>\n            <input type=\"text\" name=\"ht\\_uni\"><br>\n            Donner la quantité : <br>\n            <input type=\"text\" name=\"q\"><br>\n            Donner taux de TVA : <br>\n            <input type=\"text\" name=\"t\\_tva\"><br>\n\n            <input type=\"submit\" name=\"Resultat\" value=\"Resultat\">\n        </form>\n    </center>\n</body>\n</html>\n<?php\n\nif (isset($_POST[\"Resultat\"])){\n    $ht_uni = $_POST[\"ht_uni\"];\n    $q = $_POST[\"q\"];\n    $t_tva = $_POST[\"t_tva\"];\n}\n\n$v_tva = $ht_uni * ($t_tva / 100);\n$p_ttc = $ht_uni + $v_tva;\n\n\nprintf(\"\\n<center><br>Le prix TTC est de : %f<br><br>\", $p_ttc);\nprintf(\"\\nLe montant TVA est de : %f</center>\", $v_tva);\n?>"
+      "date_exo": "2026-09-24",
+      "titre": "Copier-coller de fichier",
+      "enonce": "Demander le nom d'un fichier source et d'un fichier destination, ouvrir les deux fichiers, puis copier le contenu du fichier source vers le fichier destination caractère par caractère jusqu'à la fin du fichier source.",
+      "correction": "<?php\n\necho \"Donner le nom du fichier source :\\n\";\n$nomS = trim(fgets(STDIN));\n\necho \"Donner le nom du fichier destination :\\n\";\n$nomD = trim(fgets(STDIN));\n\n$fs = fopen($nomS, \"r\");\n$fd = fopen($nomD, \"w\");\n\nif ($fs === false || $fd === false) {\n    echo \"Erreur lors de l'ouverture des fichiers.\\n\";\n    exit(1);\n}\n\nwhile (!feof($fs)) {\n    $car = fgetc($fs);\n    if ($car !== false) {\n        fwrite($fd, $car);\n    }\n}\n\nfclose($fs);\nfclose($fd);\n\necho \"Copie terminée.\\n\";"
     },
     {
       "id": 10,
       "numero": 1,
       "langage_id": 4,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Validation d’une date",
-      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
-      "correction": "// TRADUCTION EN JS:\n\nlet d = parseInt(prompt(\"Donner un jour :\"));\nlet m = parseInt(prompt(\"Donner un mois :\"));\nlet y = parseInt(prompt(\"Donner une année :\"));\n\nlet valid = true;\nlet bis = true;\n \nif(m < 1 || m > 12) {\n    valid = false;\n} else if(m == 2) {\n    if(bis){\n        if(d<29){\n            valid = false;\n        }\n    } else if(d<28){\n        valid = false;\n    } \n} else if ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30) {\n    valid = false;\n} else if(d < 1 || d > 31) {\n    valid = false;\n}\n\nif (valid) {\n    alert(\"Date valide\");\n} else {\n    alert(\"Date invalide\");\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Diviseurs d'un nombre",
+      "enonce": "Demander un nombre entier à l'utilisateur, puis afficher tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Diviseurs</title>\n</head>\n<body>\n  <h1>Diviseurs d'un nombre</h1>\n  \n  <label for=\"nb\">Donner un nombre entier :</label>\n  <input type=\"number\" id=\"nb\">\n  <button onclick=\"afficherDiviseurs()\">Valider</button>\n\n  <div id=\"resultat\"></div>\n\n  <script>\n    function afficherDiviseurs() {\n      const nb = parseInt(document.getElementById(\"nb\").value);\n      const resultatDiv = document.getElementById(\"resultat\");\n      resultatDiv.innerHTML = \"\";\n\n      if (isNaN(nb)) {\n        resultatDiv.innerHTML = \"Veuillez entrer un nombre valide.\";\n        return;\n      }\n\n      for (let div = 1; div <= nb; div++) {\n        if (nb % div === 0) {\n          const p = document.createElement(\"p\");\n          p.textContent = div + \" est un diviseur.\";\n          resultatDiv.appendChild(p);\n        }\n      }\n    }\n  </script>\n</body>\n</html>"
     },
     {
       "id": 11,
       "numero": 2,
       "langage_id": 4,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Nombres parfaits",
-      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
-      "correction": "let bMin = parseInt(prompt(\"Donne la borne minimal :\"));\nlet bMax = parseInt(prompt(\"Donne la borne maximal :\"));\n\nalert(\"Nombres parfaits entre \" + bMin + \" et \" + bMax);\n\nfor (let n = bMin; n < bMax; n++) {\n    let smDiv = 0;\n\n    for (let i = 1; i < n-1; i++) {\n        if (n % i == 0) {\n            smDiv = smDiv + i;\n        }\n    }\n\n    if (smDiv == n && n > 0) {\n        console.log(n);\n    }\n\n    alert(\"Les nombres parfaits sont :\" + n + \".\");\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Équation ax + b = 0",
+      "enonce": "Demander deux coefficients réels a et b, puis résoudre l'équation ax + b = 0 : afficher l'ensemble des solutions si a = 0 (R si b = 0, vide sinon), sinon calculer et afficher la solution unique x = -b/a.",
+      "correction": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>Résolution d'équation</title>\n</head>\n<body>\n  <div class=\"card\">\n    <h1>Équation ax + b = 0</h1>\n    <p class=\"sub\">a et x réels</p>\n\n    <label for=\"a\">Coefficient a</label>\n    <input type=\"number\" id=\"a\" step=\"any\" placeholder=\"ex : 2\">\n\n    <label for=\"b\">Coefficient b</label>\n    <input type=\"number\" id=\"b\" step=\"any\" placeholder=\"ex : -4\">\n\n    <button onclick=\"resoudre()\">Résoudre</button>\n\n    <div id=\"resultat\"></div>\n  </div>\n\n<script>\nfunction resoudre() {\n  const aInput = document.getElementById('a').value;\n  const bInput = document.getElementById('b').value;\n  const resultat = document.getElementById('resultat');\n\n  if (aInput === '' || bInput === '') {\n    resultat.textContent = \"Veuillez saisir les deux coefficients.\";\n    resultat.classList.remove('show');\n    return;\n  }\n\n  const a = parseFloat(aInput);\n  const b = parseFloat(bInput);\n\n  let texte;\n  if (a === 0) {\n    if (b === 0) {\n      texte = \"Ensemble des solutions : ℝ\";\n    } else {\n      texte = \"Pas de solution\";\n    }\n  } else {\n    const x = -b / a;\n    texte = \"La solution est : x = \" + x;\n  }\n\n  resultat.textContent = texte;\n  resultat.classList.add('show');\n}\n</script>\n</body>\n</html>"
     },
     {
       "id": 12,
       "numero": 3,
       "langage_id": 4,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Calcul de la TVA",
-      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
-      "correction": "// TRADUCTION EN JavaScript :\n\nlet ht_uni = parseFloat(prompt(\"Donner le prix unitaire HT: \"));\n        let q = parseInt(prompt(\"Donner la quantité :\"));\n        let t_tva = parseFloat(prompt(\"Donner le taux TVA :\"));\n \n        let v_tva = ht_uni * (t_tva / 100);\n        let p_ttc = ht_uni + v_tva;\n \n\n        alert(\"Le prix TTC est de : \" + p_ttc + \" le montant TVA est de : \" + v_tva);"
+      "date_exo": "2026-09-24",
+      "titre": "Copier-coller de fichier",
+      "enonce": "Demander le nom d'un fichier source et d'un fichier destination, ouvrir les deux fichiers, puis copier le contenu du fichier source vers le fichier destination caractère par caractère jusqu'à la fin du fichier source.",
+      "correction": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n<meta charset=\"UTF-8\">\n<title>Copier Coller</title>\n</head>\n<body>\n\n<h1>Copier Coller</h1>\n\n<p>Fichier source :</p>\n<input type=\"file\" id=\"fichierSource\">\n\n<p>Nom du fichier destination :</p>\n<input type=\"text\" id=\"nomDestination\" value=\"destination.txt\">\n\n<br><br>\n<button id=\"btnCopier\">Copier</button>\n\n<script>\ndocument.getElementById(\"btnCopier\").addEventListener(\"click\", function () {\n    var inputFichier = document.getElementById(\"fichierSource\");\n    var nomD = document.getElementById(\"nomDestination\").value;\n\n    if (inputFichier.files.length === 0) {\n        alert(\"Donner le nom du fichier source\");\n        return;\n    }\n\n    var fs = inputFichier.files[0];\n    var lecteur = new FileReader();\n\n    lecteur.onload = function () {\n        // contenu lu caractère par caractère (simulation de la boucle tant que)\n        var contenuSource = lecteur.result;\n        var contenuDestination = \"\";\n        var i = 0;\n\n        while (i < contenuSource.length) {\n            var car = contenuSource.charAt(i);\n            contenuDestination = contenuDestination + car;\n            i = i + 1;\n        }\n\n        // \"écriture\" du fichier destination : on propose le téléchargement\n        var fd = new Blob([contenuDestination], { type: \"text/plain\" });\n        var lienTelechargement = document.createElement(\"a\");\n        lienTelechargement.href = URL.createObjectURL(fd);\n        lienTelechargement.download = nomD;\n        lienTelechargement.click();\n    };\n\n    lecteur.readAsText(fs);\n});\n</script>\n\n</body>\n</html>"
     },
     {
       "id": 13,
       "numero": 1,
       "langage_id": 5,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Validation d’une date",
-      "enonce": "Demander un jour, un mois et une année à l'utilisateur, puis vérifier si la date saisie est valide, en tenant compte du nombre de jours de chaque mois et des années bissextiles.",
-      "correction": "import java.util.Scanner;\n\npublic class date {\n    public static void main (String args[]){\n        Scanner sc = new Scanner(System.in);\n        int d, m, y;\n\n\n        System.out.println(\"Donner un jour :\");\n        d = sc.nextInt();\n        System.out.println(\"Donner un mois :\");\n        m = sc.nextInt();\n        System.out.println(\"Donner une année :\");\n        y = sc.nextInt();\n\n        boolean valid = true;\n        boolean bis = true;\n\n        if (m < 1 || m > 12) {\n            valid = false;\n        } else if (m == 2 &&) {\n            if(bis) {\n                if (d<29) {\n                    valid = false;\n                }\n            } else if (d<28){\n                valid = false;\n            }\n        } else if ((m == 4 || m == 6 || m == 9 || m == 11) && d < 30) {\n            valid = false;\n        } else if (d<1 || d>31){\n            valid = false;\n        }\n\n        if (valid) {\n            System.out.println(\"Date valide\");\n        } else {\n            System.out.println(\"Date invalide\");\n        }\n    }\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Diviseurs d'un nombre",
+      "enonce": "Demander un nombre entier à l'utilisateur, puis afficher tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "import java.util.Scanner;\n\npublic class Diviseurs {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        System.out.print(\"Donner un nombre entier : \");\n        int nb = sc.nextInt();\n        \n        for (int div = 1; div <= nb; div++) {\n            if (nb % div == 0) {\n                System.out.println(div + \" est un diviseur.\");\n            }\n        }\n        \n        sc.close();\n    }\n}"
     },
     {
       "id": 14,
       "numero": 2,
       "langage_id": 5,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Nombres parfaits",
-      "enonce": "Demander une borne minimale et une borne maximale, puis afficher tous les nombres parfaits compris dans cet intervalle (un nombre parfait est égal à la somme de ses diviseurs stricts).",
-      "correction": "import java.util.Scanner;\npublic class nb_p {\n    public static void main (String args[]){\n        Scanner sc = new Scanner(System.in);\n        int bMin, bMax, n, i, smDiv;\n\n        System.out.println(\"Donner une borne minimal :\");\n        bMin = sc.nextInt();\n        System.out.println(\"Donner une borne maximal :\");\n        bMax = sc.nextInt();\n\n        for (n = bMin; n < bMax; n++) {\n            smDiv = 0;\n\n            for(i = 1; i < n - 1;n++) {\n                if (n % i == 0) {\n                    smDiv = smDiv + i;\n                }\n            }\n\n            if (smDiv == n && n > 0) {\n                System.out.println(n);\n            }\n\n            System.out.println(\"Les nombres parfaits sont \" + n);\n        }\n    }\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Équation ax + b = 0",
+      "enonce": "Demander deux coefficients réels a et b, puis résoudre l'équation ax + b = 0 : afficher l'ensemble des solutions si a = 0 (R si b = 0, vide sinon), sinon calculer et afficher la solution unique x = -b/a.",
+      "correction": "import java.util.Scanner;\n\npublic class Equation {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        System.out.print(\"Donner le premier coeff : \");\n        double a = sc.nextDouble();\n        \n        System.out.print(\"Donner le deuxieme coeff : \");\n        double b = sc.nextDouble();\n        \n        if (a == 0) {\n            if (b == 0) {\n                System.out.println(\"Ens. solutions est R\");\n            } else {\n                System.out.println(\"Pas de solution\");\n            }\n        } else {\n            double x = -b / a;\n            System.out.println(\"la solution est de : \" + x);\n        }\n        \n        sc.close();\n    }\n}"
     },
     {
       "id": 15,
       "numero": 3,
       "langage_id": 5,
       "auteur": "Groupe",
-      "date_exo": "2026-09-15",
-      "titre": "Calcul de la TVA",
-      "enonce": "Demander un prix unitaire HT, une quantité et un taux de TVA, puis calculer et afficher le montant de la TVA et le prix TTC.",
-      "correction": "import java.util.Scanner;\n\npublic class tva {\n    public static void main(String args[]) {\n        Scanner sc = new Scanner(System.in);\n        int ht_uni, q, t_tva, v_tva, p_ttc;\n\n        System.out.println(\"Donner le prix unitaire: \");\n        ht_uni = sc.nextInt();\n        System.out.println(\"Donner la quantité: \");\n        q = sc.nextInt();\n        System.out.println(\"Donner le taux de la TVA: \");\n        t_tva = sc.nextInt();\n\n        v_tva = ht_uni + t_tva/100;\n        p_ttc = ht_uni + v_tva;\n\n        System.out.println(\"Le prix unitaire TTC est de: \" + p_ttc);\n        System.out.println(\"Le montant de la TVA est de \" + v_tva);\n    }\n}"
+      "date_exo": "2026-09-24",
+      "titre": "Copier-coller de fichier",
+      "enonce": "Demander le nom d'un fichier source et d'un fichier destination, ouvrir les deux fichiers, puis copier le contenu du fichier source vers le fichier destination caractère par caractère jusqu'à la fin du fichier source.",
+      "correction": "import java.io.FileReader;\nimport java.io.FileWriter;\nimport java.io.IOException;\nimport java.util.Scanner;\n\npublic class CopierColler {\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n\n        System.out.println(\"Donner le nom du fichier source :\");\n        String nomS = sc.nextLine();\n\n        System.out.println(\"Donner le nom du fichier destination :\");\n        String nomD = sc.nextLine();\n\n        try (FileReader fs = new FileReader(nomS);\n             FileWriter fd = new FileWriter(nomD)) {\n\n            int car;\n            while ((car = fs.read()) != -1) {\n                fd.write(car);\n            }\n\n            System.out.println(\"Copie terminée.\");\n\n        } catch (IOException e) {\n            System.out.println(\"Erreur lors de la copie : \" + e.getMessage());\n        }\n\n        sc.close();\n    }\n}"
+    },
+    {
+      "id": 16,
+      "numero": 4,
+      "langage_id": 1,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Diviseurs d'un nombre (procédure)",
+      "enonce": "Écrire une procédure mesDiviseurs qui reçoit un nombre entier en paramètre et affiche tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "Procédure mesDiviseurs (nb : entier)\nDéclaration \n\tdiv : entier\nDebut \n\tPour div allant de 1 à nb faire \n\t\tSi nb % div = 0 \n\t\t\tAlors Afficher (div , \" est un diviseur de \", nb)\n\t\tFinsi \n\tFin pour \nFin mesDiviseurs"
+    },
+    {
+      "id": 17,
+      "numero": 5,
+      "langage_id": 1,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Rectangle : surface et périmètre",
+      "enonce": "Demander la longueur et la largeur d'un rectangle, puis calculer et afficher sa surface et son périmètre.",
+      "correction": "Algo : rectangle \nDéclaration \n\tlg, lr, s, p : réel\nDébut \n\tAfficher(\"Donner la longueur : \")\n\tSaisir(lg)\n\tAfficher(\"Donner la largeur : \")\n\tSaisir(lr)\n\ts <- lg * lr\n\tp <- 2*lg + 2*lr\n\tAfficher(\"La surface est de : \", s)\n\tAfficher(\"Le périmètre est de : \", p)\nFin rectangle "
+    },
+    {
+      "id": 18,
+      "numero": 6,
+      "langage_id": 1,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Tableau de prix : minimum, maximum, moyenne",
+      "enonce": "Saisir 10 prix dans un tableau, puis calculer et afficher le prix minimum, le prix maximum et le prix moyen des prix.",
+      "correction": "Algo : tableau \nDéclaration \n\ttab : tableau[10] de reel\n\tmin, max,moyen : reel\n\ti : entier\nDébut \n\tpour i allant de 1 a 10 faire \n\t\tafficher(\"Donner un prix:\")\n\t\tsaisir(tab[i]) \n\tfin pour\n\tmin <- tab[1]\n\tmax <- tab[1]\n\tmoyen <- 0\n\tpour i allant de 1 a 10 faire \n\t\tsi tab[i] > max\n\t\t\talors max <- tab[i]\n\t\tfin si\n\t\tsi tab[i] < min\n\t\t\talors min <- tab[i]\n\t\tfin si\n\t\tmoyen <- moyen + tab[i]\n\tfin pour\n\tmoyen <- moyen / 10\n\tafficher(\"Le prix maximum est de :\",max)\n\tafficher(\"Le prix minimum est de :\",min)\n\tafficher(\"Le prix moyen est de :\",moyen)\n\nFin tableau"
+    },
+    {
+      "id": 19,
+      "numero": 4,
+      "langage_id": 2,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Diviseurs d'un nombre (procédure)",
+      "enonce": "Écrire une procédure mesDiviseurs qui reçoit un nombre entier en paramètre et affiche tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "#include <stdio.h>\n\nvoid mesDiviseurs(int nb){\n\tint div ;\n\tfor (div =1; div <= nb; div++){\n\t\tif (nb % div ==0){\n\t\t\tprintf(\"%d est un diviseur de %d\", div, nb);\n\t\t}\n\t}\n}\n\nint main (){\n\tint unNb; \n\tprintf(\"Donner un nombre entier :\"); \n\tscanf(\"%d\", & unNb); \n\t\n\t//appel de l procédure mesDiviseurs\n\tmesDiviseurs (unNb); \n\n\treturn 0;\n}"
+    },
+    {
+      "id": 20,
+      "numero": 5,
+      "langage_id": 2,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Rectangle : surface et périmètre",
+      "enonce": "Demander la longueur et la largeur d'un rectangle, puis calculer et afficher sa surface et son périmètre.",
+      "correction": "#include <stdio.h>\nint main (){\n\tfloat lg, lr, s, p; \n\tprintf(\"Donner la longueur : \"); \n\tscanf(\"%f\", &lg);\n\tprintf(\"Donner la largeur : \"); \n\tscanf(\"%f\", &lr);\n\ts = lg * lr;\n\tp = 2*lg + 2*lr; \n\tprintf(\"La surface est de : %f\", s);\n\tprintf(\"Le périmètre est de : %f\", p);\n\treturn 0;\n}"
+    },
+    {
+      "id": 21,
+      "numero": 6,
+      "langage_id": 2,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Tableau de prix : minimum, maximum, moyenne",
+      "enonce": "Saisir 10 prix dans un tableau, puis calculer et afficher le prix minimum, le prix maximum et le prix moyen des prix.",
+      "correction": "#include <stdio.h>\nint main (){\n\tfloat tab[10];\n\tfloat min, max, moyen;\n\tint i;\n\n\tfor (i = 0; i < 10; i++) {\n\t\tprintf(\"Saisir un prix :\");\n\t\tscanf(\"%f\", &tab[i]);\n\t}\n\n\tmin = tab[0];\n\tmax = tab[0];\n\tmoyen = 0;\n\n\tfor (i = 0; i < 10; i++) {\n\t\tif (tab[i] > max) {\n\t\t\tmax = tab[i];\n\t\t}\n\n\t\tif (tab[i] < min) {\n\t\t\tmin = tab[i];\n\t\t}\n\n\t\tmoyen += tab[i];\n\t}\n\tmoyen /= 10;\n\n\tprintf(\"Le prix minimun est de :%f\", min);\n\tprintf(\"Le prix maximum est de :%f\", max);\n\tprintf(\"Le prix moyen est de :%f\", moyen);\n\n\treturn 0;\n}"
+    },
+    {
+      "id": 22,
+      "numero": 4,
+      "langage_id": 3,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Diviseurs d'un nombre (procédure)",
+      "enonce": "Écrire une procédure mesDiviseurs qui reçoit un nombre entier en paramètre et affiche tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Mes Diviseurs</title>\n</head>\n<body>\n    <h1>Trouver les diviseurs d'un nombre</h1>\n\n    <form method=\"post\" action=\"\">\n        <input type=\"number\" name=\"nb\" placeholder=\"Entrez un nombre\" required>\n        <button type=\"submit\">Calculer</button>\n    </form>\n\n    <?php\n    function mesDiviseurs($nb) {\n        for ($div = 1; $div <= $nb; $div++) {\n            if ($nb % $div === 0) {\n                echo $div . \" est un diviseur de \" . $nb . \"<br>\";\n            }\n        }\n    }\n\n    if ($_SERVER[\"REQUEST_METHOD\"] === \"POST\" && isset($_POST[\"nb\"])) {\n        $nb = (int) $_POST[\"nb\"];\n        echo \"<h2>Résultat :</h2>\";\n        mesDiviseurs($nb);\n    }\n    ?>\n\n</body>\n</html>"
+    },
+    {
+      "id": 23,
+      "numero": 5,
+      "langage_id": 3,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Rectangle : surface et périmètre",
+      "enonce": "Demander la longueur et la largeur d'un rectangle, puis calculer et afficher sa surface et son périmètre.",
+      "correction": "<!DOCTYPE html>\n<html>\n<head>\n\t<title>rectangle</title>\n</head>\n<body>\n\t<center>\n\t\t<h1> Exercice Rectangle </h1>\n\t\t<form method=\"post\">\n\t\t\tlongueur: <br>\n\t\t\t<input type=\"text\" name=\"lg\"> <br>\n\n\t\t\tlargeur: <br>\n\t\t\t<input type=\"text\" name=\"lr\"> <br>\n\t\t\t\n\t\t\t<input type=\"submit\" name=\"Calculer\" value=\"Calculer\">\n\t\t</form>\n\n\t\t<?php\n\t\tif (isset($_POST[\"Calculer\"])){\n\t\t\t$lg = $_POST[\"lg\"];\n\t\t\t$lr = $_POST[\"lr\"];\n\n\t\t\t$s = $lg*$lr;\n\t\t\t$p = 2*($lg + $lr);\n\t\t\tprintf(\"La surface est de   : %f <br>\", $s); \n\t\t\tprintf(\"La périmètre est de : %f\", $p);\n\t\t}\n\n\t\t?>\n\t</center>\n</body>\n</html>"
+    },
+    {
+      "id": 24,
+      "numero": 6,
+      "langage_id": 3,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Tableau de prix : minimum, maximum, moyenne",
+      "enonce": "Saisir 10 prix dans un tableau, puis calculer et afficher le prix minimum, le prix maximum et le prix moyen des prix.",
+      "correction": "<!DOCTYPE html>\n<html>\n<head>\n\t<title>tableau</title>\n</head>\n<body>\n<center>\n\t<h1> Exercice Tableau PHP </h1>\n\t<form method=\"post\">\n\t\tSaisir les prix séparés par (;) : <br>\n\t\t<input type=\"text\" name=\"tab\"> <br>\n\t\t<input type=\"submit\" name=\"Calculer\" value=\"Calculer\">\n\t</form>\n\t<?php\n\tif (isset($_POST['Calculer'])){\n\t\t$tab = explode(\";\", $_POST['tab']); \n\t\t$min = $tab[0];\n\t\t$max = $tab[0];\n\t\t$moyen = 0;\n\n\t\tfor ($i = 0; $i < count($tab); $i++) {\n\t\t\tif ($tab[$i] > $max) {\n\t\t\t\t$max = $tab[$i];\n\t\t\t}\n\n\t\t\tif ($tab[$i] < $min) {\n\t\t\t\t$min = $tab[$i];\n\t\t\t}\n\n\t\t\t$moyen += $tab[$i];\n\t\t}\n\t\t$moyen /= count($tab);\n\n\t\tprintf(\"<br>Le prix minimun est de :%f\", $min);\n\t\tprintf(\"<br>Le prix maximum est de :%f\", $max);\n\t\tprintf(\"<br>Le prix moyen est de :%f\", $moyen);\n\t}\n\t?>\n</center>\n</body>\n</html>"
+    },
+    {
+      "id": 25,
+      "numero": 4,
+      "langage_id": 4,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Diviseurs d'un nombre (procédure)",
+      "enonce": "Écrire une procédure mesDiviseurs qui reçoit un nombre entier en paramètre et affiche tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Mes Diviseurs</title>\n</head>\n<body>\n    <h1>Trouver les diviseurs d'un nombre</h1>\n    <input type=\"number\" id=\"nb\" placeholder=\"Entrez un nombre\">\n    <button onclick=\"mesDiviseurs()\">Calculer</button>\n    <ul id=\"resultat\"></ul>\n\n    <script>\n        function mesDiviseurs() {\n            const nb = parseInt(document.getElementById(\"nb\").value);\n            const resultat = document.getElementById(\"resultat\");\n            resultat.innerHTML = \"\";\n\n            for (let div = 1; div <= nb; div++) {\n                if (nb % div === 0) {\n                    const li = document.createElement(\"li\");\n                    li.textContent = div + \" est un diviseur de \" + nb;\n                    resultat.appendChild(li);\n                }\n            }\n        }\n    </script>\n</body>\n</html>"
+    },
+    {
+      "id": 26,
+      "numero": 5,
+      "langage_id": 4,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Rectangle : surface et périmètre",
+      "enonce": "Demander la longueur et la largeur d'un rectangle, puis calculer et afficher sa surface et son périmètre.",
+      "correction": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Rectangle</title>\n</head>\n<body>\n    <h1>Calcul de rectangle</h1>\n\n    <label for=\"lg\">Longueur :</label>\n    <input type=\"number\" id=\"lg\" step=\"any\"><br><br>\n\n    <label for=\"lr\">Largeur :</label>\n    <input type=\"number\" id=\"lr\" step=\"any\"><br><br>\n\n    <button onclick=\"calculer()\">Calculer</button>\n\n    <p id=\"resultatSurface\"></p>\n    <p id=\"resultatPerimetre\"></p>\n\n    <script>\n        function calculer() {\n            const lg = parseFloat(document.getElementById(\"lg\").value);\n            const lr = parseFloat(document.getElementById(\"lr\").value);\n\n            const s = lg * lr;\n            const p = 2 * lg + 2 * lr;\n\n            document.getElementById(\"resultatSurface\").textContent = \"La surface est de : \" + s;\n            document.getElementById(\"resultatPerimetre\").textContent = \"Le périmètre est de : \" + p;\n        }\n    </script>\n</body>\n</html>"
+    },
+    {
+      "id": 27,
+      "numero": 6,
+      "langage_id": 4,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Tableau de prix : minimum, maximum, moyenne",
+      "enonce": "Saisir 10 prix dans un tableau, puis calculer et afficher le prix minimum, le prix maximum et le prix moyen des prix.",
+      "correction": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Tableau - Min / Max / Moyenne</title>\n</head>\n<body>\n    <h1>Prix : Minimum, Maximum, Moyenne</h1>\n    <div id=\"resultat\"></div>\n\n    <script>\n        const tab = [];\n        let min, max, moyen;\n\n        for (let i = 0; i < 10; i++) {\n            let prix = parseFloat(prompt(\"Donner un prix (\" + (i + 1) + \"/10) :\"));\n            tab.push(prix);\n        }\n\n        min = tab[0];\n        max = tab[0];\n        moyen = 0;\n\n        for (let i = 0; i < 10; i++) {\n            if (tab[i] > max) {\n                max = tab[i];\n            }\n            if (tab[i] < min) {\n                min = tab[i];\n            }\n            moyen = moyen + tab[i];\n        }\n\n        moyen = moyen / 10;\n\n        document.getElementById(\"resultat\").innerHTML =\n            \"<p>Le prix maximum est de : \" + max + \"</p>\" +\n            \"<p>Le prix minimum est de : \" + min + \"</p>\" +\n            \"<p>Le prix moyen est de : \" + moyen.toFixed(2) + \"</p>\";\n    </script>\n</body>\n</html>"
+    },
+    {
+      "id": 28,
+      "numero": 4,
+      "langage_id": 5,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Diviseurs d'un nombre (procédure)",
+      "enonce": "Écrire une procédure mesDiviseurs qui reçoit un nombre entier en paramètre et affiche tous ses diviseurs (les nombres qui le divisent sans reste).",
+      "correction": "import java.util.Scanner;\n\npublic class MesDiviseurs {\n    \n    public static void mesDiviseurs(int nb) {\n        for (int div = 1; div <= nb; div++) {\n            if (nb % div == 0) {\n                System.out.println(div + \" est un diviseur de \" + nb);\n            }\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        System.out.print(\"Entrez un nombre : \");\n        int nb = sc.nextInt();\n        mesDiviseurs(nb);\n        sc.close();\n    }\n}"
+    },
+    {
+      "id": 29,
+      "numero": 5,
+      "langage_id": 5,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Rectangle : surface et périmètre",
+      "enonce": "Demander la longueur et la largeur d'un rectangle, puis calculer et afficher sa surface et son périmètre.",
+      "correction": "import java.util.Scanner;\n\npublic class Rectangle {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        double lg, lr, s, p;\n\n        System.out.print(\"Donner la longueur : \");\n        lg = sc.nextDouble();\n        System.out.print(\"Donner la largeur : \");\n        lr = sc.nextDouble();\n\n        s = lg * lr;\n        p = 2 * lg + 2 * lr;\n\n        System.out.println(\"La surface est de : \" + s);\n        System.out.println(\"Le périmètre est de : \" + p);\n\n        sc.close();\n    }\n}"
+    },
+    {
+      "id": 30,
+      "numero": 6,
+      "langage_id": 5,
+      "auteur": "Groupe",
+      "date_exo": "2026-09-25",
+      "titre": "Tableau de prix : minimum, maximum, moyenne",
+      "enonce": "Saisir 10 prix dans un tableau, puis calculer et afficher le prix minimum, le prix maximum et le prix moyen des prix.",
+      "correction": "import java.util.Scanner;\n\npublic class Tableau {\n    public static void main(String[] args) {\n        double[] tab = new double[10];\n        double min, max, moyen;\n        Scanner sc = new Scanner(System.in);\n\n        for (int i = 0; i < 10; i++) {\n            System.out.println(\"Donner un prix :\");\n            tab[i] = sc.nextDouble();\n        }\n\n        min = tab[0];\n        max = tab[0];\n        moyen = 0;\n\n        for (int i = 0; i < 10; i++) {\n            if (tab[i] > max) {\n                max = tab[i];\n            }\n            if (tab[i] < min) {\n                min = tab[i];\n            }\n            moyen = moyen + tab[i];\n        }\n\n        moyen = moyen / 10;\n\n        System.out.println(\"Le prix maximum est de : \" + max);\n        System.out.println(\"Le prix minimum est de : \" + min);\n        System.out.println(\"Le prix moyen est de : \" + moyen);\n\n        sc.close();\n    }\n}"
     }
   ]
 }

@@ -6,95 +6,40 @@
       {
         "id": 1,
         "numero": 1,
-        "titre": "Variables",
+        "titre": "Les boucles",
         "etat": "Termine",
-        "contenu": "Déclaration et typage des variables, affectation, conventions de nommage en pseudocode. Mis en pratique avec le calcul de la TVA à partir d'un prix, d'une quantité et d'un taux.",
-        "exemple_code": "Variables ht_uni, t_tva, v_tva, p_ttc : réel\nDebut\n  v_tva <- ht_uni * (t_tva / 100)\n  p_ttc <- ht_uni + v_tva\nFin",
-        "bilan": "Chapitre validé par les 4 membres du groupe.",
+        "contenu": "Boucle Pour : parcours d'un intervalle borné, utilisation du modulo pour tester une divisibilité. Mis en pratique avec la recherche des diviseurs d'un nombre entier (on teste chaque valeur de 1 à nb et on retient celles qui divisent nb sans reste).",
+        "bilan": "Une boucle Pour convient quand le nombre d'itérations est connu à l'avance (ici de 1 à nb). Le test de divisibilité repose sur l'opérateur modulo (%).",
         "examens": [
           {
             "id": 1,
             "numero": 1,
-            "titre": "QCM variables",
-            "type": "QCM",
-            "nb_questions": 10,
-            "dernier_resultat": "18/20",
-            "lien": null
-          },
-          {
-            "id": 2,
-            "numero": 2,
-            "titre": "Exercice écrit — Calcul de la TVA",
+            "titre": "Exercice écrit — Diviseurs d'un nombre",
             "type": "Écrit",
             "nb_questions": 1,
-            "dernier_resultat": "17/20",
-            "lien": "exercices.html?exercice=3"
-          }
-        ],
-        "exercices_lies": [
-          {
-            "exercice_id": 3,
-            "label": "Calcul de la TVA"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "numero": 2,
-        "titre": "Conditions",
-        "etat": "Termine",
-        "contenu": "Structures Si / Sinon / SinonSi, opérateurs de comparaison et logiques, imbrication de conditions. Mis en pratique avec la validation d'une date (jour, mois, année, mois de 30/31 jours, années bissextiles).",
-        "exemple_code": "Si m < 1 OU m > 12 Alors\n  valide <- faux\nSinon Si m = 2 Alors\n  Si bissextile Alors\n    Si d > 29 Alors\n      valide <- faux\n    FinSi\n  Sinon\n    Si d > 28 Alors\n      valide <- faux\n    FinSi\n  FinSi\nFinSi",
-        "bilan": "Chapitre validé, moyenne du groupe 15/20.",
-        "examens": [
-          {
-            "id": 3,
-            "numero": 1,
-            "titre": "QCM conditions",
-            "type": "QCM",
-            "nb_questions": 12,
-            "dernier_resultat": "15/20",
-            "lien": null
-          },
-          {
-            "id": 4,
-            "numero": 2,
-            "titre": "Exercice écrit — Validation d'une date",
-            "type": "Écrit",
-            "nb_questions": 1,
-            "dernier_resultat": "15/20",
+            "dernier_resultat": null,
             "lien": "exercices.html?exercice=1"
           }
         ],
         "exercices_lies": [
           {
             "exercice_id": 1,
-            "label": "Validation d'une date"
+            "label": "Diviseurs d'un nombre"
           }
         ]
       },
       {
-        "id": 3,
-        "numero": 3,
-        "titre": "Les boucles",
-        "etat": "En cours",
-        "contenu": "Boucle for, while, do…while : quand choisir l'une ou l'autre, compteurs et conditions d'arrêt. Mis en pratique avec la recherche des nombres parfaits dans un intervalle (boucles imbriquées).",
-        "exemple_code": "Pour n de bMin à bMax Faire\n  smDiv <- 0\n  Pour i de 1 à (n-1) Faire\n    Si n % i = 0 Alors\n      smDiv <- smDiv + i\n    FinSi\n  FinPour\n  Si smDiv = n ET n > 0 Alors\n    Ecrire(n)\n  FinSi\nFinPour",
-        "bilan": "Une boucle for quand le nombre de tours est connu, while sinon. Attention aux boucles imbriquées : bien vérifier les bornes pour éviter les erreurs de décalage.",
+        "id": 2,
+        "numero": 2,
+        "titre": "Les conditions",
+        "etat": "Termine",
+        "contenu": "Structures Si / Sinon / SinonSi, opérateurs de comparaison. Mis en pratique avec la résolution d'une équation du premier degré ax + b = 0 : on distingue le cas a = 0 (ensemble de solutions R si b = 0, vide sinon) du cas a ≠ 0 (solution unique x = -b/a).",
+        "bilan": "Bien distinguer les cas particuliers (a = 0) du cas général avant de calculer, pour éviter une division par zéro.",
         "examens": [
           {
-            "id": 5,
+            "id": 2,
             "numero": 1,
-            "titre": "QCM",
-            "type": "QCM",
-            "nb_questions": 10,
-            "dernier_resultat": "16/20",
-            "lien": null
-          },
-          {
-            "id": 6,
-            "numero": 2,
-            "titre": "Exercice écrit — Nombres parfaits",
+            "titre": "Exercice écrit — Équation ax + b = 0",
             "type": "Écrit",
             "nb_questions": 1,
             "dernier_resultat": null,
@@ -104,7 +49,107 @@
         "exercices_lies": [
           {
             "exercice_id": 2,
-            "label": "Nombres parfaits"
+            "label": "Équation ax + b = 0"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "numero": 3,
+        "titre": "La manipulation de fichiers",
+        "etat": "En cours",
+        "contenu": "Ouverture et fermeture de fichiers (lecture/écriture), lecture et écriture caractère par caractère, boucle Tant que pilotée par la fin de fichier. Mis en pratique avec un programme de copier-coller qui recopie un fichier source vers un fichier destination.",
+        "bilan": "La boucle Tant que est adaptée ici car le nombre de caractères à lire n'est pas connu à l'avance : on boucle jusqu'à la fin du fichier source.",
+        "examens": [
+          {
+            "id": 3,
+            "numero": 1,
+            "titre": "Exercice écrit — Copier-coller de fichier",
+            "type": "Écrit",
+            "nb_questions": 1,
+            "dernier_resultat": null,
+            "lien": "exercices.html?exercice=3"
+          }
+        ],
+        "exercices_lies": [
+          {
+            "exercice_id": 3,
+            "label": "Copier-coller de fichier"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "numero": 4,
+        "titre": "Les procédures",
+        "etat": "Termine",
+        "contenu": "Une procédure est un sous-programme nommé qui reçoit des paramètres et exécute des instructions, mais ne renvoie pas de valeur (contrairement à une fonction). Elle permet de découper un algorithme en blocs réutilisables. Mis en pratique avec la procédure mesDiviseurs, qui reçoit un nombre entier nb en paramètre et affiche tous ses diviseurs, reprenant la logique de boucle Pour et de modulo déjà vue mais isolée dans un bloc appelable.",
+        "bilan": "Le paramètre nb remplace la saisie directe : la procédure devient réutilisable avec n'importe quelle valeur transmise par le programme appelant. On distingue bien la déclaration de la procédure (l'algorithme) de son appel.",
+        "examens": [
+          {
+            "id": 4,
+            "numero": 1,
+            "titre": "Exercice écrit — Diviseurs d'un nombre (procédure)",
+            "type": "Écrit",
+            "nb_questions": 1,
+            "dernier_resultat": null,
+            "lien": "exercices.html?exercice=16"
+          }
+        ],
+        "exercices_lies": [
+          {
+            "exercice_id": 16,
+            "label": "Diviseurs d'un nombre (procédure)"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "numero": 5,
+        "titre": "Les calculs arithmétiques",
+        "etat": "Termine",
+        "contenu": "Un algorithme purement séquentiel enchaîne déclarations, saisies et calculs sans boucle ni condition. Mis en pratique avec le calcul de la surface et du périmètre d'un rectangle à partir de sa longueur et de sa largeur, en appliquant directement les formules s = lg × lr et p = 2×lg + 2×lr.",
+        "bilan": "Même sans structure de contrôle, l'ordre des instructions reste essentiel : les variables doivent être saisies avant d'être utilisées dans un calcul.",
+        "examens": [
+          {
+            "id": 5,
+            "numero": 1,
+            "titre": "Exercice écrit — Rectangle : surface et périmètre",
+            "type": "Écrit",
+            "nb_questions": 1,
+            "dernier_resultat": null,
+            "lien": "exercices.html?exercice=17"
+          }
+        ],
+        "exercices_lies": [
+          {
+            "exercice_id": 17,
+            "label": "Rectangle : surface et périmètre"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "numero": 6,
+        "titre": "Les tableaux",
+        "etat": "En cours",
+        "contenu": "Un tableau permet de stocker plusieurs valeurs de même type sous un seul nom, indexées par une position. On y accède et on le parcourt avec une boucle Pour. Mis en pratique avec un tableau de 10 prix : une première boucle remplit le tableau par saisie, une seconde le parcourt pour déterminer le minimum, le maximum et calculer la moyenne.",
+        "bilan": "Initialiser min et max avec le premier élément du tableau (et non une valeur arbitraire comme 0) est indispensable pour que les comparaisons soient correctes, y compris avec des prix négatifs ou faibles.",
+        "examens": [
+          {
+            "id": 6,
+            "numero": 1,
+            "titre": "Exercice écrit — Tableau de prix : minimum, maximum, moyenne",
+            "type": "Écrit",
+            "nb_questions": 1,
+            "dernier_resultat": null,
+            "lien": "exercices.html?exercice=18"
+          }
+        ],
+        "exercices_lies": [
+          {
+            "exercice_id": 18,
+            "label": "Tableau de prix : minimum, maximum, moyenne"
           }
         ]
       }
